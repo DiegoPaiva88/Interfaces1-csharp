@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Course.Services
 {
-    class BrasilTaxService
+    class BrasilTaxService : ITaxService
     {
         public double Tax(double amount)
         {
