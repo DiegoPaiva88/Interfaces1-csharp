@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Course.Entities;
+using Course.Services;
+using System;
 using System.Globalization;
 
 namespace Course
@@ -20,14 +22,15 @@ namespace Course
             Console.Write("Enter price per day: ");
             double day = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
-            //CarRental carRental = new CarRental(start, finish, new Vehicle(model));
+            CarRental carRental = new CarRental(start, finish, new Vehicle(model));
 
-            //RentalService rentalService = new RentalService(hour, day);
+            RentalService rentalService = new RentalService(hour, day);
 
-           // rentalService.ProcessInvoice(carRental);
+            rentalService.ProcessInvoice(carRental);
 
             Console.WriteLine("INVOICE:");
-            //Console.WriteLine(carRental.Invoice);
+            Console.WriteLine(carRental.Invoice);
+            Console.ReadKey();
         }
     }
 }
